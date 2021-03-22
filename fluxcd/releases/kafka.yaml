@@ -3,13 +3,13 @@ apiVersion:  helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
   name: kafka
-  namespace: dafault
+  namespace: default
 spec:
   releaseName: kafka
   chart:
     repository: https://charts.bitnami.com/bitnami
     name: kafka
-    version: 0.38.3
+    version: 12.12.0
   values:
     zookeeper:
       enabled: true
