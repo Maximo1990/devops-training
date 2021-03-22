@@ -1,0 +1,21 @@
+---
+apiVersion:  helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: kafka
+  namespace: dafault
+spec:
+  releaseName: kafka
+  chart:
+    repository: https://charts.bitnami.com/bitnami
+    name: kafka
+    version: 0.38.3
+  values:
+    zookeeper:
+      enabled: true
+      replicaCount: 3
+      persistence:
+        storageClass: "standard"
+    replicaCount: 3
+    persistence:
+      storageClass: "standard"
