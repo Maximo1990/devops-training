@@ -13,5 +13,7 @@ spec:
   values:
     persistence:
       storageClass: "standard"
-    jenkinsUser: jenkins
-    jenkinsPassword: "hola"
+  valuesFrom:
+  - secretKeyRef:
+    name: values-jenkins
+    key: values-jenkins.yaml
